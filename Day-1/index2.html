@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Hidden Search Widget</title>
+    
+    <style>
+          * {
+            margin: 0;
+            padding: 0;
+          }
+          body {
+            background-color: rgb(97, 97, 218);
+            display: flex;
+            justify-content: center;
+height: 100vh;
+align-items: center;   
+       }
+
+          .container {
+            height: 50px;
+            position: relative;
+          margin: 0;
+         
+          
+          }
+          
+          .search {
+            margin: 0;
+           
+            background-origin: none;
+            padding: 15px;
+            width: 12px;
+            font-size: larger;
+            border: none;
+            outline: none;
+            transition: width 0.4s ease;
+          }
+
+         .showSearch {
+       position: absolute;
+       top: 0;
+       left: 0;
+       padding: 11.2px;
+       border: none;
+       cursor: pointer;
+       background-color: white;
+       transition: transform 0.4s ease;
+      
+         }
+
+         .container.active .search {
+          width: 200px;
+         }
+
+         .container.active .showSearch {
+          transform: translateX(200px);
+         }
+       
+         
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <input  type="text" name="search" id="search" class="search" placeholder="Search.." >
+        <button class="showSearch">
+            <i class="fa-solid fa-magnifying-glass" style="font-size: 30px;"></i>
+        </button>
+    </div>
+    <script>
+     const search = document.querySelector('.container')
+const btn = document.querySelector('.showSearch')
+const input = document.querySelector('.search')
+
+btn.addEventListener('click', () => {
+    search.classList.toggle('active')
+    input.focus()
+})
+      
+    </script>
+    
+</body>
+
+</html>
